@@ -5,17 +5,17 @@ import api from '../../services/api'
 
 
 function Home() {
-  const [users, setUsers] = useState([])
+  const [tasks, setTasks] = useState([])
 
   const inputTitle = useRef()
   const inputDescription = useRef()
   const inputStatus = useRef()
 
-  async function getUsers(){
-    const usersFromApi = await api.get('./usuarios')
+  async function getTasks(){
+    const tasksFromApi = await api.get('./usuarios')
 
-    setUsers(usersFromApi.data)
-    console.log(users)
+    setTasks(tasksFromApi.data)
+    console.log(tasks)
   }
 
   async function createTasks(){
@@ -26,17 +26,17 @@ function Home() {
      status: inputStatus.current.value
 
      })
-     getUsers()
+     getTasks()
   }
 
-  async function deleteUsers(id){
+  async function deleteTasks(id){
      await api.delete(`/usuarios/${id}`)             // essa forma dentro dos parenteses permite colocar uma variavel dentro dos parametros
 
-     getUsers()
+     getTasks()
   }
 
   useEffect(() => {
-    getUsers()
+    getTasks()
   },[])
 
   return (
@@ -52,15 +52,15 @@ function Home() {
           <button type='button' onClick={createTasks}>Cadastrar Tarefas</button>
         </form>
         
-        {users.map((user) => (
+        {tasks.map((tasks) => (
         
-        <div key={user.id} className='card'>
+        <div key={tasks.id} className='card'>
           <div>
-            <p>Titulo: <span>{user.titulo}</span></p>
-            <p>Descrição: <span>{user.descricao}</span></p>
-            <p>Status: <span>{user.status}</span></p>
+            <p>Titulo: <span>{tasks.titulo}</span></p>
+            <p>Descrição: <span>{tasks.descricao}</span></p>
+            <p>Status: <span>{tasks.status}</span></p>
           </div>
-          <button onClick={() => deleteUsers(user.id)}>
+          <button onClick={() => deleteTasks(tasks.id)}>
             <img src={Trash} alt="lixo" />
           </button>
         </div>
