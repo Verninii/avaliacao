@@ -3,6 +3,7 @@ import './style.css'
 import Trash from '../../../assets/trash.png'         //obrigatoriamente o import tende a ser maiusculo
 import api from '../../services/api'
 
+const API_URL='avaliacao-production.up.railway.app'
 
 function Home() {
   const [users, setUsers] = useState([])
