@@ -4,8 +4,7 @@ import Trash from '../../../assets/trash.png';
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://avaliacao-production.up.railway.app', // URL do seu backend no Railway
-  timeout: 10000,
+  baseURL: 'http://junction.proxy.rlwy.net:23267', // URL do backend no Railway
 });
 
 function Home() {
@@ -36,10 +35,6 @@ function Home() {
   useEffect(() => {
     getUsers();
   }, []);
-
-  useEffect(() => {
-    console.log(users); // Log para observar os usuários quando o estado mudar
-  }, [users]);
 
   return (
     <div className='container'>

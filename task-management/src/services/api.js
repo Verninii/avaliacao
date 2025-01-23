@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-    baseURL:'avaliacao-production.up.railway.app'
+    baseURL:'junction.proxy.rlwy.net:23267'
 })
 
 export default api
