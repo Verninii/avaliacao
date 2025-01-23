@@ -5,6 +5,7 @@ import axios from 'axios';
 
 const api = axios.create({
   baseURL: 'https://avaliacao-production.up.railway.app', // URL do seu backend no Railway
+  timeout: 10000,
 });
 
 function Home() {
