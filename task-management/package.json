@@ -4,7 +4,6 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
     "fix-permissions": "chmod -R 777 ./node_modules/.bin",
     "dev": "npm run fix-permissions && vite",
     "build": "npm run fix-permissions && vite build",
