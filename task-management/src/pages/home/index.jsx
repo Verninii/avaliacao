@@ -13,6 +13,8 @@ function Home() {
   const inputDescription = useRef();
   const inputStatus = useRef();
 
+  const API_URL = "https://comfortable-contentment-production.up.railway.app";
+
   async function getUsers() {
     const usersFromApi = await api.get('/usuarios');
     setUsers(usersFromApi.data);
