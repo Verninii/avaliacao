@@ -6,7 +6,7 @@ export default defineConfig({
   base: '/', // Garante que os assets sejam carregados corretamente
   server: {
     host: '0.0.0.0', // Permite conexões externas
-    port: 4173,      // Use a porta que você está usando
+    port: 23267,      // Use a porta que você está usando
   },
 });
 
