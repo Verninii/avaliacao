@@ -4,7 +4,7 @@ import Trash from '../../../assets/trash.png';
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://junction.proxy.rlwy.net:23267', // URL do backend no Railway
+  baseURL: 'avaliacao-production.up.railway.app', // URL do backend no Railway
 });
 
 function Home() {
@@ -12,8 +12,6 @@ function Home() {
   const inputTitle = useRef();
   const inputDescription = useRef();
   const inputStatus = useRef();
-
-  const API_URL = "https://comfortable-contentment-production.up.railway.app";
 
   async function getUsers() {
     const usersFromApi = await api.get('/usuarios');
