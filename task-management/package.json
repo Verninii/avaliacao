@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "fix-permissions": "chmod -R 777 ./node_modules/.bin",
+    "fix-permissions": "echo 'Permissions fix skipped on Windows'",
     "dev": "npm run fix-permissions && vite",
     "build": "npm run fix-permissions && vite build",
     "start": "npm run fix-permissions && vite preview --host",
