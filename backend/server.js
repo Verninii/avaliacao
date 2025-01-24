@@ -8,7 +8,7 @@ const app = express()
 app.use(express.json())
 app.use(cors())               // instalar a biblioteca do cors permite que qualquer um acesse o backend
 const corsOption = {
-    origin: 'comfortable-contentment-production.up.railway.app',
+    origin: 'avaliacao-production.up.railway.app',
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
 }
@@ -68,6 +68,5 @@ app.delete('/usuarios/:id', async(req,res) =>{
     })
     res.status(200).json({message: 'Usuário deletado com sucesso'})
 })
-
 app.listen(3000)
 
