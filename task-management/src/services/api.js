@@ -1,7 +1,15 @@
-import axios from 'axios'
+import axios from 'axios';
 
-const API_URL = process.env.DATABASE_URL;
-axios.get(`${API_URL}/usuarios`)
+// URL da API do backend, vinda da variável de ambiente
+const API_URL = process.env.REACT_APP_API_URL;
+
+// Criação de uma instância do Axios com a URL base
+const api = axios.create({
+  baseURL: API_URL,
+});
+
+// Exemplo de requisição
+api.get('/usuarios')
   .then(response => {
     console.log(response.data);
   })
@@ -9,4 +17,4 @@ axios.get(`${API_URL}/usuarios`)
     console.error(error);
   });
 
-export default api
+export default api;
