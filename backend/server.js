@@ -8,7 +8,7 @@ const app = express()
 app.use(express.json())
 app.use(cors())               // instalar a biblioteca do cors permite que qualquer um acesse o backend
 const corsOption = {
-    origin: 'https://comfortable-contentment-production.up.railway.app',
+    origin: 'comfortable-contentment-production.up.railway.app',
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
 }
